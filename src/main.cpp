@@ -151,7 +151,7 @@ int main() {
   }); // end h.onMessage
 
   h.onConnection([&h](uWS::WebSocket<uWS::SERVER> ws, uWS::HttpRequest req) {
-    std::cout << "Connected!!!" << std::endl;
+    std::cout << "Connected!!!!!" << std::endl;
   });
 
   h.onDisconnection([&h](uWS::WebSocket<uWS::SERVER> ws, int code, 

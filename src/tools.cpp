@@ -14,7 +14,7 @@ VectorXd Tools::CalculateRMSE(const vector<VectorXd> &estimations,
   /**
    * TODO: Calculate the RMSE here.
    */
-  printf("Tools::CalculateRMSE\n");
+  //printf("Tools::CalculateRMSE\n");
   
   VectorXd rmse(4);
   rmse << 0, 0, 0, 0;
@@ -26,8 +26,8 @@ VectorXd Tools::CalculateRMSE(const vector<VectorXd> &estimations,
     return rmse;
   }
   
-  printf("%s %d\n", __FUNCTION__, __LINE__);
-  printf("%d\n",estimations.size());
+  //printf("%s %d\n", __FUNCTION__, __LINE__);
+  //printf("%d\n",estimations.size());
   for (unsigned int i = 0; i < estimations.size(); ++i)
   {
     VectorXd residual = estimations[i] - ground_truth[i];
@@ -40,8 +40,8 @@ VectorXd Tools::CalculateRMSE(const vector<VectorXd> &estimations,
   
   rmse = rmse.array().sqrt();
   
-  printf("%s %d\n", __FUNCTION__, __LINE__);
-  std::cout << "rmse: [" << rmse << "]\n";
+  //printf("%s %d\n", __FUNCTION__, __LINE__);
+  //std::cout << "rmse: [" << rmse << "]\n";
   return rmse;
 }
 
@@ -50,7 +50,7 @@ MatrixXd Tools::CalculateJacobian(const VectorXd& x_state) {
    * TODO:
    * Calculate a Jacobian here.
    */
-  printf("Tools::CalculateJacobian\n");
+  //printf("Tools::CalculateJacobian\n");
   MatrixXd Hj(3,4);
   
   float px = x_state(0);
@@ -72,6 +72,6 @@ MatrixXd Tools::CalculateJacobian(const VectorXd& x_state) {
        -(py/c1),              (px/c1),               0,     0,
        py*(vx*py - vy*px)/c3, px*(px*vy - py*vx)/c3, px/c2, py/c2;
   
-  std::cout << "Hj:" << Hj << std::endl;
+  //std::cout << "Hj:" << Hj << std::endl;
   return Hj;
 }
